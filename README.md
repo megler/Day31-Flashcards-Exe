@@ -3,6 +3,13 @@
 A foreign language frequently used words application using tkinter. 
 Day 31 Python Bootcamp
 
+## NOTICE
+If you download the .exe, Windows Defender or Avast will flag it as malware. This
+is because the executable is unsigned. This program is for display purposes only
+and really isn't being designed for mass distribution.
+
+It is for anyone who wants to have a working example of the code found in the repo.
+
 
 ## Usage
 This is a reformatted version [original](https://github.com/megler/Day31-Foreign_Language-Flashcards)

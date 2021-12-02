@@ -18,6 +18,7 @@ from cards import *
 def run_flashcards() -> None:
     card = Card()
     card.new_card()
+    card.gui_layout()
     card.window.mainloop()
 
 

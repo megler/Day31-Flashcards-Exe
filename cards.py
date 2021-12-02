@@ -24,8 +24,6 @@ class Card(object):
     def __init__(self) -> None:
         self.BACKGROUND_COLOR = "#B1DDC6"
         self.window = Tk()
-        self.window.title("Flashy")
-        self.window.config(padx=50, pady=50, bg=self.BACKGROUND_COLOR)
         self.flip_timer = self.window.after(3000, func=self.flip_card)
         self.canvas = Canvas(width=800, height=526)
         self.foreign_word = {}
@@ -47,14 +45,17 @@ class Card(object):
         self.new_word = self.canvas.create_text(
             400, 263, text="", font=("Ariel", 60, "bold")
         )
-        self.canvas.config(bg=self.BACKGROUND_COLOR, highlightthickness=0)
-        self.canvas.grid(row=0, column=0, columnspan=2)
-
         # Buttons
         self.cross_img = PhotoImage(file=resource_path("images/right.png"))
         self.unknown_button = Button(
             image=self.cross_img, command=self.new_card, highlightthickness=0
         )
+
+    def gui_layout(self):
+        self.window.title("Flashy")
+        self.window.config(padx=50, pady=50, bg=self.BACKGROUND_COLOR)
+        self.canvas.config(bg=self.BACKGROUND_COLOR, highlightthickness=0)
+        self.canvas.grid(row=0, column=0, columnspan=2)
         self.unknown_button.grid(row=1, column=0, columnspan=2)
 
     def new_card(self) -> None:
